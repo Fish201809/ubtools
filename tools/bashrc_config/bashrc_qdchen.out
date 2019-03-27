@@ -1,0 +1,4 @@
+
+if [ -f ~/.bashrc_qdchen ]; then
+	source ~/.bashrc_qdchen
+fi

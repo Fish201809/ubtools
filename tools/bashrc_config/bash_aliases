@@ -1,0 +1,21 @@
+# 建立tags文件
+alias genctag='ctags -R --c-kinds=+lpxzL --c++-kinds=+lpxzLANU --fields=+niazS --extras=+q --output-format=e-ctags'
+# 建立cscope数据库
+alias gencsdb='find `pwd` -name "*.[chsS]" -o -name "*.cpp" -o -name "*.cc" -o -name "*.C", -o -name "*.cxx" > cscope.files && cscope -bkq'
+# 建立GTAGS数据库
+alias gengtag='find . -name "*.[chsS]" -o -name "*.cpp" -o -name "*.cc" -o -name "*.C", -o -name "*.cxx" > gtags.files && gtags'
+# 删除tags文件
+alias clnctag='rm -rf tags'
+# 删除filename.tags文件
+alias clngtag='rm -rf GTAGS GRTAGS GPATH gtags.files'
+# 删除GTAGS数据库相关文件
+alias clncsdb='rm -rf *cscope.*'
+# 删除cscope数据库相关文件
+alias clnftag='rm -rf filename.tags'
+
+
+alias df='df -h'
+alias ll='ls -alFh'
+alias la='ls -Ah'
+alias l='ls -CFh'
+

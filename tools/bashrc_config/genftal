@@ -1,0 +1,10 @@
+#!/bin/sh                                                                                                                                                                              
+# generate filename tags for lookupfile plugin
+(echo "!_TAG_FILE_SORTED        2       /2=foldcase/";
+(find . -not -name '*.o' -not -wholename '*.svn*' -not -wholename '*.git*' -not -regex '.*\.\(png\|gif\)' -type f -printf "%f\t%p\t1\n" | \
+sort -f)) > filename.tags
+
+#genftag脚本
+#由于Lookupfile插件默认基于ctags产生的索引进行查找文件，ctags本身除了文件信息还有大量的代码标识符等其他信息，这会使得Lookupfile查找速度很慢，所以一般都是专门为#Lookupfile建立一个只有文件索引的tags文件。为了方便使用，把建立Lookupfile专用tags文件写成一个shell脚本放到~/.local/bin目录下，命名为genftag，这样只需要在项目#根目录下执行：./genftag 命令就可以生成filename.tags供Lookupfile使用了。
+
+
